@@ -1,0 +1,331 @@
+/*genera layout*/
+
+/*linkintest*/
+
+/* body {
+  background-color: blue;
+} */
+
+/* .gallery figure {
+  width: 100%;
+} */
+
+/*grids*/
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+/* 1. index */
+
+.grid_2-1 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.grid_1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+dl.grid_1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* dl.grid_1-1 .order */
+.dl.grid_1-1 .order {
+  order: -1;
+}
+
+/* 3. operative system  */
+
+.grid_5-3 {
+  display: grid;
+  grid-template-columns: 5fr 3fr;
+  gap: 60px;
+}
+
+.grid_2-3 {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 1px;
+  align-items: center;
+}
+
+div .tablet {
+  display: flex;
+  flex-direction: column;
+  margin-right: 2.5rem;
+  border-right: 5rem;
+}
+
+div .macimg {
+  margin-top: none;
+  display: flex;
+  border-left: 20rem;
+  margin-left: 3rem;
+}
+
+.grid_3-2 {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 1px;
+  align-items: center;
+}
+
+figure {
+  margin: 0;
+}
+
+img .grid_5-3 {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: flex;
+}
+
+.flex_col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 4. komponenenter  */
+
+.grid_1-1-1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* 
+   FLEX
+ */
+
+.flex_col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* 
+   COMPONENT SECTIONS
+ */
+
+.component-section {
+  margin-bottom: 80px;
+}
+
+.component-section:last-child {
+  margin-bottom: 0;
+}
+
+/* 
+   IMAGES
+ */
+
+figure {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: flex;
+}
+
+/* 
+   DEFINITION LIST
+ */
+
+dl.grid_1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+dl.grid_1-1 div {
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+dl.grid_1-1 dd {
+  border-style: groove;
+  border: violet;
+  border-radius: 3px;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  margin: 0;
+}
+
+/* .flex_col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+} */
+
+/* 
+   COMPONENT SECTIONS
+ */
+
+.component-section {
+  margin-bottom: 80px;
+}
+
+.component-section:last-child {
+  margin-bottom: 0;
+}
+
+/*  */
+/* FINAL: GALLERY */
+/*  */
+
+.wholepg {
+  width: 100%;
+  max-width: 1300px; /* use px instead of ch */
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.pmax {
+  max-width: 65ch;
+}
+
+.grid_1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid_1-1-1-1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.grid_1-1-1-1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.apple-84 {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+
+.desktop-setup {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.macbook {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+.codeimg {
+  grid-column: 3 / span 2;
+  grid-row: 2;
+}
+
+.intel {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.winkeyboard {
+  grid-column: 2 / span 3;
+  grid-row: 3;
+}
+
+.grid_1-1-1-1 {
+  grid-auto-rows: 250px;
+}
+
+/*
+.order {}
+*/
+
+/*
+main {}
+
+section.grid_2-1
+
+section.grid_1-1
+
+/* grid insdie dl */
+
+/* --- Responsivt --- */
+
+/* tablet */
+
+@media (min-width: 600px) {
+  .grid_1-1-1-1 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 800px) {
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .grid_1-1-1-1 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* desktop */
+
+@media (min-width: 1024px) {
+  .grid_1-1-1-1 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* fixed page misalignment by adding this: */
+
+/* more media  */
+
+@media (max-width: 700px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  .grid_2-1,
+  .grid_1-1,
+  .grid_5-3,
+  .grid_2-3,
+  .grid_3-2,
+  .grid_1-1-1,
+  .grid_1-1-1-1,
+  dl.grid_1-1 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid_1-1-1-1 img {
+    height: auto;
+  }
+}
+.flex_col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
