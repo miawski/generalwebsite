@@ -22,6 +22,13 @@ main {
   padding: 40px;
 }
 
+section,
+.component-section,
+.bottom_imgs {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
 /* 1. index */
 
 .grid_2-1 {
@@ -44,12 +51,40 @@ dl.grid_1-1 {
   order: -1;
 }
 
+/* index d alignment */
+
+dl.grid_1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 20px;
+  margin-top: 20px;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin: 0;
+  text-align: right;
+}
+
 /* 3. operative system  */
 
 .grid_5-3 {
   display: grid;
   grid-template-columns: 5fr 3fr;
   gap: 60px;
+}
+
+div .macimg {
+  display: flex;
+  flex-direction: column;
+  margin-right: 2.5rem;
+}
+
+div .mactxt {
+  flex-direction: row;
 }
 
 .grid_2-3 {
@@ -66,12 +101,6 @@ div .tablet {
   border-right: 5rem;
 }
 
-div .macimg {
-  display: flex;
-  border-left: 20rem;
-  margin-left: 3rem;
-}
-
 .grid_3-2 {
   display: grid;
   grid-template-columns: 3fr 2fr;
@@ -81,13 +110,6 @@ div .macimg {
 
 figure {
   margin: 0;
-}
-
-img .grid_5-3 {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  display: flex;
 }
 
 .grid_3-2 {
@@ -156,12 +178,12 @@ figure {
 img {
   width: 100%;
   height: auto;
-  border-radius: 10px;
-  display: flex;
+  display: block;
+  border-radius: 6px;
 }
 
 /* 
-   DEFINITION LIST
+   DEFINITION LISTER
  */
 
 dl.grid_1-1 {
@@ -232,13 +254,6 @@ dl.grid_1-1 dd {
   gap: 1rem;
 }
 
-.grid_1-1-1-1 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
 .apple-84 {
   grid-column: 1 / span 2;
   grid-row: 1 / span 2;
@@ -267,10 +282,6 @@ dl.grid_1-1 dd {
 .winkeyboard {
   grid-column: 2 / span 3;
   grid-row: 3;
-}
-
-.grid_1-1-1-1 {
-  grid-auto-rows: 250px;
 }
 
 /*
@@ -332,28 +343,90 @@ section.grid_1-1
 
 /* tablet */
 
-@media (min-width: 600px) {
+@media (min-width: 700px) and (max-width: 1023px) {
   .grid_1-1-1-1 {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 800px) {
-  nav ul {
-    flex-direction: row;
-    justify-content: center;
+    gap: 1rem;
   }
 
-  .grid_1-1-1-1 {
-    grid-template-columns: repeat(2, 1fr);
+  /* FULL RESET */
+  .apple-84,
+  .desktop-setup,
+  .macbook,
+  .codeimg,
+  .intel,
+  .winkeyboard {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  .grid_1-1-1-1 img {
+    height: auto;
   }
 }
 
 /* desktop */
 
+/* DESKTOP */
 @media (min-width: 1024px) {
+  .wholepg {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 40px;
+  }
+
+  .h1_lft_corner {
+    grid-column: 1;
+  }
+
+  .h2_p_mid {
+    grid-column: 2;
+  }
+
+  .h2_p_mid .pmax {
+    max-width: 65ch;
+  }
+
+  /* Make image grid span full width below header */
+  .grid_1-1-1-1 {
+    grid-column: 1 / -1;
+    margin-top: 40px;
+  }
+
   .grid_1-1-1-1 {
     grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .apple-84 {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+  }
+
+  .desktop-setup {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .macbook {
+    grid-column: 4;
+    grid-row: 1;
+  }
+
+  .codeimg {
+    grid-column: 3 / span 2;
+    grid-row: 2;
+  }
+
+  .intel {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .winkeyboard {
+    grid-column: 2 / span 3;
+    grid-row: 3;
   }
 }
 
@@ -390,4 +463,65 @@ section.grid_1-1
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+/* burger menu (desktop deaktiveret) */
+nav {
+  position: relative;
+}
+
+nav ul {
+  display: flex;
+}
+
+#burger-toggle {
+  display: none;
+}
+
+.burger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 15px;
+}
+
+/* mobile burger respo */
+@media (max-width: 700px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: white;
+    width: 100%;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  #burger-toggle:checked + .burger + ul {
+    display: flex;
+  }
+}
+
+@media (max-width: 700px) {
+  main {
+    padding: 20px;
+  }
+
+  section,
+  .component-section,
+  .bottom_imgs,
+  .wholepg {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
