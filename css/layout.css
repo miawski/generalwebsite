@@ -1,6 +1,5 @@
-/*genera layout*/
-
 /*linkintest*/
+/* css linking to html test: */
 
 /* body {
   background-color: blue;
@@ -194,7 +193,7 @@ dl.grid_1-1 dd {
 } */
 
 /* 
-   COMPONENT SECTIONS
+ komponenter
  */
 
 .component-section {
@@ -209,9 +208,11 @@ dl.grid_1-1 dd {
 /* FINAL: GALLERY */
 /*  */
 
+/* css koder hele galleri: */
+
 .wholepg {
   width: 100%;
-  max-width: 1300px; /* use px instead of ch */
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -286,6 +287,48 @@ section.grid_1-1
 /* grid insdie dl */
 
 /* --- Responsivt --- */
+
+/* MOBILE RESPO */
+
+@media (max-width: 700px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  .grid_2-1,
+  .grid_1-1,
+  .grid_5-3,
+  .grid_2-3,
+  .grid_3-2,
+  .grid_1-1-1,
+  .grid_1-1-1-1,
+  dl.grid_1-1 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid_1-1-1-1 {
+    grid-auto-rows: auto;
+  }
+
+  .apple-84,
+  .desktop-setup,
+  .macbook,
+  .codeimg,
+  .intel,
+  .winkeyboard {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .grid_1-1-1-1 img {
+    height: auto;
+  }
+}
 
 /* tablet */
 
