@@ -156,18 +156,6 @@ figure {
 }
 
 /* 
-   COMPONENT SECTIONS
- */
-
-.component-section {
-  margin-bottom: 80px;
-}
-
-.component-section:last-child {
-  margin-bottom: 0;
-}
-
-/* 
    IMAGES
  */
 
@@ -180,6 +168,23 @@ img {
   height: auto;
   display: block;
   border-radius: 6px;
+}
+
+/* forcing img dimensions om komponenter to uniform  */
+
+.component-images {
+  align-items: stretch;
+}
+
+.component-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.grid_1-1-1 figure {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
 }
 
 /* 
