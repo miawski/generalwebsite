@@ -33,10 +33,12 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
 dl.grid_1-1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+/* d style correction: */
 
 /* dl.grid_1-1 .order */
 .dl.grid_1-1 .order {
@@ -88,6 +90,24 @@ img .grid_5-3 {
   height: auto;
   border-radius: 10px;
   display: flex;
+}
+
+.grid_3-2 {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 1px;
+  align-items: center;
+}
+
+.grid_3-2 > div:first-child {
+  display: flex;
+  flex-direction: column;
+  order: 1;
+}
+
+.grid_3-2 > div.order {
+  display: flex;
+  order: 2;
 }
 
 .flex_col {

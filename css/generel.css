@@ -313,3 +313,26 @@ p {
 figure {
   margin: 20px 0;
 }
+
+dd.grid_1-1 {
+  background-color: darkviolet;
+  border-style: ridge;
+  border-radius: 1px;
+  border-color: #b20ce9;
+  border-width: 0.5px;
+  margin: 5px;
+  padding: 1px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: lightgray;
+}
+dl.grid_1-1 {
+  background-color: darkviolet;
+  border-style: ridge;
+  border-radius: 1px;
+  border-color: #b20ce9;
+  border-width: 0.5px;
+  margin: 5px;
+  padding: 1px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: lightgray;
+}
